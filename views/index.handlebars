@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="container">
+
+    <div class="header">
+      <img src="../public/assets/css/images/burger.png" width="150px" id="burgerImg">
+      <h1>Eat-Da-Burger!</h1>
+    </div>
+    <ul>
+      {{#each burgers}} {{#unless this.devoured}}
+      <li>
+        {{this.burger_name}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devour" value="true">
+          <button type="submit">DEVOUR!</button>
+        </form>
+
+        {{> burgers/delete-burger}}
+      </li>
+      {{/unless}} {{/each}}
+    </ul>
+    </div>
+
+    <div class="devoured">
+      <h2>Burgers that are devoured!</h2>
+      <ul>
+        {{#each burgers}} {{#if this.devour}}
+        <li>
+          {{this.burger_name}}
+
+          <form action="/{{this.id}}?_method=PUT" method="POST">
+            <input type="hidden" name="devour" value="false">
+            <button type="submit">DEVOURED!</button>
+          </form>
+        </li>
+        {{/if}} {{/each}}
+      </ul>
+      <div>
+
+        <h2>Add a Different Burger</h2>
+        <form class="create-update-form" action="/" method="POST">
+
+          <div class="form-group">
+            <input type="text" id="ca" name="name">
+          </div>
+
+          <button type="submit">Add burger</button>
+        </form>
