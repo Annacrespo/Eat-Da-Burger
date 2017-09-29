@@ -1,0 +1,19 @@
+
+body {
+    background-image: url("http://www.designbolts.com/wp-content/uploads/2013/02/Free-Seamless-wood-planks-texture-For-3D-Mapping.jpg");
+    background-color: #cccccc;
+    text-align: center;
+}
+
+.devoured {
+    background-color: white;
+    padding: 25px;
+    margin-top: 40px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+.burgerList li{
+    list-style-type: none;
+
+}
+
